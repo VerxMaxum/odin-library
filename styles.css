@@ -38,6 +38,8 @@ dialog {
 
 dialog > form {
     width: 90%;
+    display: flex;
+    flex-direction: column;
 }
 
 dialog > form > input,
@@ -56,7 +58,9 @@ dialog > form > div {
 
 #dialog-button-container {
     display: flex;
+    height: auto;
     justify-content: space-between;
+    justify-self: flex-end;
 }
 
 #dialog-button-container > button {
@@ -70,6 +74,8 @@ dialog > form > div {
     font-size: 1.5rem;
     border-radius: 5px;
     box-shadow: 5px 5px 5px gray;
+    display: flex;
+    flex-direction: column;
 }
 
 .button-container {
@@ -78,6 +84,7 @@ dialog > form > div {
     margin-top: 1rem;
     display: flex;
     justify-content: space-between;
+    justify-self: flex-end;
 }
 
 .book-button {

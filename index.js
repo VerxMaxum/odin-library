@@ -96,3 +96,7 @@ function addtoLibrary(event) {
     initialize();
     console.log(library);
 }
+
+function removeFromLibrary() {
+    
+}
