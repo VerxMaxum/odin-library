@@ -40,12 +40,14 @@ dialog > form {
     width: 90%;
 }
 
-dialog > form > input {
+dialog > form > input,
+dialog > form > select {
     font-size: 1.5rem;
     padding: 0.75rem;
 }
 
 dialog > form > input,
+dialog > form > select,
 dialog > form > div {
     width: 100%;
     margin-top: 0.7rem;
