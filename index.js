@@ -1,6 +1,3 @@
-// const library = [{title: "IT", author: "Stephen King", pages: "1400"},
-//                  {title: "The Green Mile", author: "Stephen King", pages: "1000"}];
-
 function Book(title, name, pages, read) {
     this.title = title;
     this.name = name;
@@ -54,6 +51,13 @@ for(let book of library) {
 
     main.appendChild(card);
 }
+
+const dialogButton = document.getElementById('add');
+const dialog = document.getElementById('dialog-form');
+const closeDialog = document.getElementById('close-form');
+dialogButton.addEventListener("click", () => {dialog.showModal();})
+closeDialog.addEventListener("click", () => {dialog.close();})
+
 
 function addtoLibrary() {
 
