@@ -30,6 +30,38 @@
     margin-left: 3rem;
 }
 
+dialog {
+    width: 30%;
+    left: 35%;
+    top: 25%;
+}
+
+dialog > form {
+    width: 90%;
+}
+
+dialog > form > input {
+    font-size: 1.5rem;
+    padding: 0.75rem;
+}
+
+dialog > form > input,
+dialog > form > div {
+    width: 100%;
+    margin-top: 0.7rem;
+    margin-bottom: 0.7rem;
+}
+
+#dialog-button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#dialog-button-container > button {
+    width: 30%;
+    font-size: 1.5rem;
+}
+
 .book-container {
     border: 1px black solid;
     padding: 1rem;
