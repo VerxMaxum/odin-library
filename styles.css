@@ -21,6 +21,13 @@
     padding: 3rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 3rem;
+}
+
+#add {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-left: 3rem;
 }
 
 .book-container {
