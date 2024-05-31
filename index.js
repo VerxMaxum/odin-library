@@ -39,6 +39,8 @@ function initialize() {
             readButton.textContent = "Read";
         else if(book.read === "No")
             readButton.textContent = "Unread";
+        readButton.setAttribute("data-index", library.indexOf(book));
+        readButton.addEventListener("click", readOrNot);
 
         let removeButton = document.createElement('button');
         removeButton.classList.add('book-button', 'remove-button');
@@ -112,4 +114,17 @@ function removeFromLibrary(event) {
         library = library.slice(0,index).concat(library.slice(index+1));
     clear();
     initialize();
+}
+
+function readOrNot(event) {
+    const button = event.target;
+    const index = button.getAttribute('data-index');
+    if(button.textContent === 'Read') {
+        button.textContent = 'Not Read';
+        library[index].read = 'No';
+    } else if(button.textContent === 'Not Read') {
+        button.textContent = 'Read';
+        library[index].read = 'Yes';
+    }
+    
 }
