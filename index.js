@@ -21,7 +21,10 @@ function initialize() {
         card.classList.add('book-container');
 
         let title = document.createElement('p');
-        title.textContent = "Title: " + book.title;
+        if(book.title.length > 10)
+            title.textContent = "Title: " + book.title.slice(0,11) + "...";
+        else
+            title.textContent = "Title: " + book.title;
 
         let author = document.createElement('p');
         author.textContent = "Author: " + book.author;
@@ -143,7 +146,7 @@ function readOrNot(event) {
         button.textContent = 'Not Read';
         library[index].read = 'No';
         button.style.backgroundColor = "#19745e";
-        button.style.border = "none";
+        button.style.border = "2px #3BBA9C solid";
         button.style.padding = "0.5rem";
         button.style.borderRadius = "5px";
         button.style.color = "#67c9b0";
@@ -152,7 +155,7 @@ function readOrNot(event) {
         button.textContent = 'Read';
         library[index].read = 'Yes';
         button.style.backgroundColor = "#2E3047";
-        button.style.border = "none";
+        button.style.border = "2px #3BBA9C solid";
         button.style.padding = "0.5rem";
         button.style.borderRadius = "5px";
         button.style.color = "#3BBA9C";

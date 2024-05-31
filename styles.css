@@ -13,6 +13,10 @@ body {
     min-height: 100vh;
 }
 
+button {
+    box-sizing: border-box;
+}
+
 #greeting {
     border-bottom: 2px #3BBA9C solid;
     background-color: #2E3047;
@@ -74,6 +78,7 @@ dialog {
     left: 35%;
     top: 25%;
     background-color: #3BBA9C;
+    border: 5px #2E3047 solid;
 }
 
 dialog > form {
@@ -161,6 +166,7 @@ dialog > form > div {
     background-color: #3BBA9C;
     color: #2E3047;
     font-weight: 600;
+    overflow: hidden;
 }
 
 .button-container {
@@ -182,10 +188,19 @@ dialog > form > div {
 
 .remove-button {
     background-color: #2E3047;
-    border: none;
+    border: 2px #3BBA9C solid;
     padding: 0.5rem;
     border-radius: 5px;
     color: #3BBA9C;
+    font-weight: bold;
+}
+
+.remove-button:hover {
+    background-color: #3BBA9C;
+    border: 2px #2E3047 solid;
+    padding: 0.5rem;
+    border-radius: 5px;
+    color: #2E3047;
     font-weight: bold;
 }
 
