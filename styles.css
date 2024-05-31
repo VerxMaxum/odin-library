@@ -14,7 +14,7 @@ body {
 }
 
 #greeting {
-    border-bottom: 1px gray solid;
+    border-bottom: 2px #3BBA9C solid;
     background-color: #2E3047;
 }
 
@@ -23,7 +23,7 @@ body {
     text-align: center;
     padding: 1rem;
     color: #3BBA9C;
-    text-shadow: 1px 2px #a9fdea;
+    text-shadow: 2px 2px #565a85;
 }
 
 #main {
@@ -38,6 +38,7 @@ body {
 
 #add-container {
     background-color: #3C3F58;
+    padding-bottom: 1rem;
 }
 
 #add {
@@ -50,6 +51,7 @@ body {
     border-radius: 5px;
     color: #2E3047;
     font-weight: bold;
+    box-shadow: 5px 5px 5px #2E3047;
     cursor: pointer;
 }
 
@@ -68,8 +70,10 @@ body {
 
 dialog {
     width: 30%;
+    height: 51%;
     left: 35%;
     top: 25%;
+    background-color: #3BBA9C;
 }
 
 dialog > form {
@@ -79,9 +83,29 @@ dialog > form {
 }
 
 dialog > form > input,
-dialog > form > select {
+dialog > form > select,
+dialog > form > input::placeholder,
+dialog > form > select::placeholder {
     font-size: 1.5rem;
     padding: 0.75rem;
+    box-sizing: border-box;
+    color: #2E3047;
+    border: none;
+    border-bottom: 2px #2E3047 solid;
+    background-color: transparent;
+    appearance: text;
+}
+
+dialog > form > select > option {
+    background-color: #2E3047;
+    color: #3BBA9C;
+}
+
+dialog > form > input:focus,
+dialog > form > select:focus {
+    background-color: transparent;
+    outline: none;
+    appearance: textfield;
 }
 
 dialog > form > input,
@@ -102,14 +126,35 @@ dialog > form > div {
 #dialog-button-container > button {
     width: 30%;
     font-size: 1.5rem;
+    height: fit-content;
+    background-color: #2E3047;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 5px;
+    color: #3BBA9C;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#dialog-button-container > button:hover {
+    width: 30%;
+    font-size: 1.5rem;
+    height: fit-content;
+    background-color: #3BBA9C;
+    border: 2px #2E3047 solid;
+    padding: 0.5rem;
+    border-radius: 5px;
+    color: #2E3047;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .book-container {
-    border: 1px black solid;
+    border: 2px #2E3047 solid;
     padding: 1rem;
     font-size: 1.5rem;
     border-radius: 5px;
-    box-shadow: 5px 5px 5px gray;
+    box-shadow: 5px 5px 5px #24274d;
     display: flex;
     flex-direction: column; 
     height: fit-content;
@@ -141,15 +186,6 @@ dialog > form > div {
     padding: 0.5rem;
     border-radius: 5px;
     color: #3BBA9C;
-    font-weight: bold;
-}
-
-.read-button {
-    background-color: #19745e;
-    border: none;
-    padding: 0.5rem;
-    border-radius: 5px;
-    color: #67c9b0;
     font-weight: bold;
 }
 
