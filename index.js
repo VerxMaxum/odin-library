@@ -5,7 +5,7 @@ function Book(title, name, pages, read) {
     this.read = read;
 }
 
-const library = [new Book("It", "Stephen King", "1400", "Yes"), new Book("The Green Mile", "Stephen King", "1000", "Yes")];
+let library = [new Book("It", "Stephen King", "1400", "Yes"), new Book("The Green Mile", "Stephen King", "1000", "Yes")];
 
 const main = document.getElementById('main');
 
@@ -42,7 +42,9 @@ function initialize() {
 
         let removeButton = document.createElement('button');
         removeButton.classList.add('book-button', 'remove-button');
+        removeButton.setAttribute("data-index", library.indexOf(book));
         removeButton.textContent = "Remove";
+        removeButton.addEventListener("click", removeFromLibrary);
 
         buttonContainer.appendChild(readButton);
         buttonContainer.appendChild(removeButton);
@@ -97,6 +99,17 @@ function addtoLibrary(event) {
     console.log(library);
 }
 
-function removeFromLibrary() {
-    
+function removeFromLibrary(event) {
+    console.log("Hello from remove button");
+    const index = event.target.getAttribute('data-index');
+    if(library.length === 1)
+        library = [];
+    else if(index === 0)
+        library = library.slice(1);
+    else if(index === library.length-1)
+        library = library.slice(0,index);
+    else
+        library = library.slice(0,index).concat(library.slice(index+1));
+    clear();
+    initialize();
 }
