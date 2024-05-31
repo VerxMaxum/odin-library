@@ -7,27 +7,63 @@
     font-family:'Courier New', Courier, monospace;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 #greeting {
     border-bottom: 1px gray solid;
+    background-color: #2E3047;
 }
 
 #greeting > h1 {
     font-size: 5rem;
     text-align: center;
     padding: 1rem;
+    color: #3BBA9C;
+    text-shadow: 1px 2px #a9fdea;
 }
 
 #main {
     padding: 3rem;
     display: grid;
+    height: 100%;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 3rem;
+    background-color: #3C3F58;
+    flex: 1 0 auto;
+}
+
+#add-container {
+    background-color: #3C3F58;
 }
 
 #add {
     font-size: 1.5rem;
     margin-top: 1rem;
     margin-left: 3rem;
+    background-color: #3BBA9C;
+    border: 2px #2E3047 solid;
+    padding: 0.7rem;
+    border-radius: 5px;
+    color: #2E3047;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#add:hover {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-left: 3rem;
+    background-color: #2E3047;
+    border: 2px #3BBA9C solid;
+    padding: 0.7rem;
+    border-radius: 5px;
+    color: #3BBA9C;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 dialog {
@@ -75,7 +111,11 @@ dialog > form > div {
     border-radius: 5px;
     box-shadow: 5px 5px 5px gray;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
+    height: fit-content;
+    background-color: #3BBA9C;
+    color: #2E3047;
+    font-weight: 600;
 }
 
 .button-container {
@@ -89,6 +129,27 @@ dialog > form > div {
 
 .book-button {
     width: 40%;
-    height: 2rem;
+    height: fit-content;
     font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
 }
+
+.remove-button {
+    background-color: #2E3047;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 5px;
+    color: #3BBA9C;
+    font-weight: bold;
+}
+
+.read-button {
+    background-color: #19745e;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 5px;
+    color: #67c9b0;
+    font-weight: bold;
+}
+

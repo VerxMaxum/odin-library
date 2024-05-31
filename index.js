@@ -35,10 +35,24 @@ function initialize() {
 
         let readButton = document.createElement('button');
         readButton.classList.add('book-button', 'read-button');
-        if(book.read === "Yes")
+        if(book.read === "Yes") {
             readButton.textContent = "Read";
-        else if(book.read === "No")
-            readButton.textContent = "Unread";
+            readButton.style.backgroundColor = "#2E3047";
+            readButton.style.border = "none";
+            readButton.style.padding = "0.5rem";
+            readButton.style.borderRadius = "5px";
+            readButton.style.color = "#3BBA9C";
+            readButton.style.fontWeight = "bold";
+        }
+        else if(book.read === "No") {
+            readButton.textContent = "Not Read";
+            readButton.style.backgroundColor = "#19745e";
+            readButton.style.border = "none";
+            readButton.style.padding = "0.5rem";
+            readButton.style.borderRadius = "5px";
+            readButton.style.color = "#67c9b0";
+            readButton.style.fontWeight = "bold";
+        }
         readButton.setAttribute("data-index", library.indexOf(book));
         readButton.addEventListener("click", readOrNot);
 
@@ -63,8 +77,14 @@ function initialize() {
 const dialogButton = document.getElementById('add');
 const dialog = document.getElementById('dialog-form');
 const closeDialog = document.getElementById('close-form');
-dialogButton.addEventListener("click", () => {dialog.showModal();})
-closeDialog.addEventListener("click", () => {dialog.close();})
+dialogButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    dialog.showModal();
+})
+closeDialog.addEventListener("click", (e) => {
+    e.preventDefault();
+    dialog.close();
+})
 
 const addBook = document.getElementById('add-book');
 addBook.addEventListener("click", addtoLibrary);
@@ -122,9 +142,21 @@ function readOrNot(event) {
     if(button.textContent === 'Read') {
         button.textContent = 'Not Read';
         library[index].read = 'No';
+        button.style.backgroundColor = "#19745e";
+        button.style.border = "none";
+        button.style.padding = "0.5rem";
+        button.style.borderRadius = "5px";
+        button.style.color = "#67c9b0";
+        button.style.fontWeight = "bold";
     } else if(button.textContent === 'Not Read') {
         button.textContent = 'Read';
         library[index].read = 'Yes';
+        button.style.backgroundColor = "#2E3047";
+        button.style.border = "none";
+        button.style.padding = "0.5rem";
+        button.style.borderRadius = "5px";
+        button.style.color = "#3BBA9C";
+        button.style.fontWeight = "bold";
     }
     
 }
